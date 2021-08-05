@@ -1,0 +1,1050 @@
+@import"mixin";
+
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //1rem =10px, 10/16 = 62.5%
+
+  @include respond(tab-land) {
+    // width < 1200
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) {
+    // width < 900
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(phone) {
+    // width < 600
+    font-size: 31.25%; // 1rem = 5px, 5/16 = 31.25%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+.linear-bg {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(354deg, #03060f, #241f43);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+
+}
+
+#header {
+  width: 100%;
+  padding: 2rem;
+
+}
+
+.l-headernav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav-cta {
+  margin: 1.5rem 1rem;
+  display: flex;
+}
+
+
+  .btn {
+    font-size: 1.5rem;
+    font-family: ShabnamB;
+    cursor: pointer;
+    color: #ffcb05;
+
+    @include respond(tab-port) {
+      font-size: 2rem;
+    }
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+    }
+  }
+
+
+  .header-cta {
+    padding: 1.5rem 2.5rem;
+    background-color: transparent;
+    outline: none;
+    overflow: hidden;
+    border: 3px solid #ffcb05;
+
+    @include respond(tab-port) {
+      margin-left: 4rem;
+      padding: 1rem 2rem;
+
+    }
+
+    @include respond(phone) {
+      margin-left: 4rem;
+      padding: 1rem 2rem;
+
+    }
+  }
+
+  .toggle-menu {
+    display: none;
+    outline: none;
+    border: none;
+    text-align: center;
+    color: #fff;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    font-size: 5rem;
+    cursor: pointer;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+
+
+    @include respond(tab-port) {
+      display: inline;
+    }
+
+    @include respond(phone) {
+      display: inline;
+    }
+
+  }
+
+  .header-menu {
+    display: flex;
+    flex-direction: row-reverse;
+    list-style: none;
+    margin-right: auto;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
+
+  }
+
+  .header-menu>li {
+    margin: 1.5rem 3rem;
+
+    @include respond(tab-land) {
+      margin: 1rem 2rem;
+    }
+  }
+ 
+
+  .header-menu>li>a {
+    font-size: 1.5rem;
+    font-family: ShabnamB;
+    text-decoration: none;
+    color: #e0e0e0;
+  }
+
+  .header-logobox {
+    display: inherit;
+    margin: auto;
+    margin: 1.5rem 3rem;
+  }
+
+  .header-logobox>img {
+    width: 20rem;
+    overflow: hidden;
+
+    @include respond(tab-port) {
+      width: 27rem;
+    }
+
+    @include respond(phone) {
+      width: 25rem;
+    }
+
+
+  }
+
+  #l-main {
+    width: 80%;
+    margin: 0 auto;
+    direction: rtl;
+    position: relative;
+  }
+
+  .l-headerbox {
+    display: flex;
+    width: 100%;
+    margin: 2.5rem auto;
+
+    @include respond(tab-port) {
+      text-align: center;
+    }
+  }
+
+  h1>.heading-primary {
+    display: block;
+    flex: 0 0 80%;
+    direction: rtl;
+    font-size: 5rem;
+    color: #ffffff;
+    font-family: ShabnamB;
+    margin-bottom: 1rem;
+
+
+  }
+
+  h1>.heading-secondary {
+    display: block;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    letter-spacing: normal;
+    font-family: ShabnamLFD;
+    font-weight: 200;
+    color: #bdbdbd;
+
+  }
+
+  .l-game {
+    display: flex;
+    justify-content: center;
+    padding: 6rem 0;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
+  }
+
+  .image-box {
+    flex: 0 0 55%;
+    margin-left: 4rem;
+    width: 25rem;
+    height: 49rem;
+    position: relative;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 5rem;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      margin-bottom: 5rem;
+    }
+  }
+
+  .image-box>img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  .image-box span {
+    position: absolute;
+    top: -1.5rem;
+    right: -1.5rem;
+    background-color: #ffcb05;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-family: ShabnamB;
+    color: #3a3657;
+
+    @include respond(tab-land) {
+      font-size: 1.5rem;
+    }
+
+  }
+
+  .l-reviews {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+
+  }
+
+  .progress-bar {
+    color: #000;
+    background-color: #383737;
+    margin-bottom: 4rem;
+  }
+
+  .fill-progress {
+    height: 24px;
+    width: 75%;
+    color: #fff;
+    background-color: #ffcb05;
+    position: relative;
+
+    @include respond(tab-land) {
+    height: 2.5rem;
+    }
+    @include respond(tab-port){
+    height: 2.5rem;
+    }
+    @include respond(phone) {
+    height: 2rem;
+    }
+
+  }
+
+  .fill-progress span {
+    position: absolute;
+    bottom: -3.7rem;
+    left: -1.5rem;
+    font-size: 2rem;
+    font-family: ShabnamBFD;
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+
+    }
+  }
+
+  .fill-progress::before {
+    content: "";
+    position: absolute;
+    top: -2rem;
+    left: -1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: #ffcb05;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+
+  }
+
+  .l-value {
+    display: flex;
+    flex-direction: column;
+    font-family: ShabnamBFD;
+    color: #ffffff;
+    margin-bottom: auto;
+  }
+
+  .from-light {
+    font-size: 1.5rem;
+    font-family: ShabnamLFD;
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .total-bold {
+    font-size: 3.5rem;
+    font-family: ShabnamBFD;
+  }
+
+  .to-medium {
+    font-size: 2rem;
+    font-family: ShabnamB
+  }
+
+  .person-supproted {
+    margin: 3rem 0;
+  }
+
+  .l-supported {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .btn-supported {
+    text-decoration: none;
+    color: #0b2251;
+    font-size: 2.7rem;
+    border: 1px solid #ffcb05;
+    background-image: linear-gradient(to right, #ffa805, #ffcb05);
+    padding: 2rem 3rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    @include respond(tab-land) {
+      font-size: 2rem;
+    }
+    @include respond(tab-port) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .btn-supported>img {
+    margin-left: 1rem;
+    margin-bottom: -1rem;
+    height: 3.5rem;
+  }
+
+  .share {
+    width: 48%;
+    float: left;
+    padding: 1.5rem 2.5rem;
+    background-color: transparent;
+    border: 3px solid #ffcb05;
+
+    @include respond(phone) {
+      padding: 2rem 2.5rem;
+    }
+  }
+
+  .download {
+    width: 48%;
+    padding: 1.5rem 2.5rem;
+    color: #3a3657;
+    background-color: #ffcb05;
+    border: 3px solid #ffcb05;
+
+    @include respond(phone) {
+      padding: 2rem 2.5rem;
+    }
+  }
+
+  .share>i {
+    color: #ffcb05;
+    margin-left: .5rem;
+    font-size: 2rem;
+    margin-bottom: -1rem;
+
+  }
+
+  .download>i {
+    color: #3a3657;
+    margin-left: .5rem;
+    font-size: 2rem;
+    margin-bottom: -1rem;
+  }
+
+
+
+
+  .mega-nav {
+    background-color: #3a3657;
+
+  }
+
+  #l-main-nav {
+    width: 80%;
+    margin: 0 auto;
+    direction: rtl;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    @include respond(tab-land) {
+      justify-content: space-around;
+
+    }
+    @include respond(tab-port) {
+      justify-content: space-around;
+
+    }
+
+    @include respond(phone) {
+      justify-content: space-around;
+
+    }
+  }
+
+  .mega-item {
+    color: #ffcb05;
+    font-size: 2rem;
+    font-family: ShabnamB;
+    padding: 2.7rem 8rem;
+    text-align: center;
+    text-decoration: none;
+
+    @include respond(tab-port) {
+      flex: 1;
+      padding: 2.5rem 4rem;
+      font-size: 2rem;
+    }
+
+    @include respond(phone) {
+      flex: 1;
+      padding: 2.5rem 4rem;
+      font-size: 2rem;
+    }
+
+  }
+
+  .mega-item.active {
+    border-bottom: 4px solid #ffcb05;
+
+    @include respond(phone) {
+      border-bottom: 3px solid #ffcb05;
+
+    }
+  }
+
+  #main-section {
+    width: 100%;
+    margin: auto;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 50px 2px rgba(1, 1, 1, 0.6);
+
+  }
+
+  .l-information {
+    display: flex;
+    justify-content: space-between;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include respond(phone) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+  }
+
+  #l-rightsidebar {
+    flex: 0 0 60%;
+    margin: 2rem 0 2rem 5rem;
+
+    @include respond(tab-port) {
+      margin: 0;
+    }
+
+    @include respond(phone) {
+      margin: 0;
+    }
+  }
+
+  #l-leftsidebar {
+    margin: 4rem 0;
+  }
+
+  .paragraph {
+    font-size: 1.5rem;
+    font-family: ShabnamLFD;
+    padding: 4.5rem 0;
+    color: #212121;
+    line-height: normal;
+    text-align: justify;
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+    }
+
+  }
+
+  .img__blog {
+    width: 100%;
+  }
+
+  .status {
+    font-family: ShabnamB;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  .header-status {
+    font-family: ShabnamB;
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+
+    @include respond(tab-port) {
+      font-size: 2.5rem;
+    }
+
+    @include respond(phone) {
+      font-size: 2rem;
+    }
+
+  }
+
+  .section-status {
+    padding: 1rem;
+    background-color: #ffcb05;
+    font-size: 1.5rem;
+    line-height: normal;
+
+    @include respond(tab-port) {
+      padding: 2rem;
+
+    }
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .user-rating {
+    font-family: ShabnamB;
+    background-color: #bdbdbd;
+  }
+
+  .l-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .star-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    fill: #ffcb05;
+    margin-bottom: -.3rem;
+  }
+
+  .star-icon4 {
+    width: 2.75rem;
+    height: 2.75rem;
+    fill: rgba(0, 0, 0, 0.12);
+    margin-bottom: -.3rem;
+  }
+
+  .star-icon5 {
+    width: 2.75rem;
+    height: 2.75rem;
+    fill: rgba(0, 0, 0, 0.12);
+    margin-bottom: -.3rem;
+  }
+
+  .rate {
+    font-family: ShabnamBFD;
+    font-size: 2.5rem;
+
+  }
+
+  .rate-number {
+    margin: 3rem 0;
+  }
+
+  .chart-rating {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem 0 2rem 3rem;
+    position: relative;
+  }
+
+  .chart-rating h4 {
+    position: absolute;
+    bottom: 0;
+    right: 45%;
+    font-size: 1.5rem;
+    font-family: ShabnamB;
+    color: #212121;
+
+    @include respond(phone) {
+      font-size: 1.7rem;
+      right: 45%;
+    }
+  }
+
+  .progress {
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+    color: #fff;
+    font-size: 2rem;
+
+  }
+
+  .progress:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7rem;
+    height: 7rem;
+    border: .7rem solid;
+    border-color: #ffcb05 rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    transform: rotate(45deg);
+  }
+
+  .progress>span {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    color: #212121;
+    font-family: ShabnamBFD;
+  }
+
+  .progress-c2 {
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+    color: #fff;
+    font-size: 2rem;
+
+  }
+
+  .progress-c2:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7rem;
+    height: 7rem;
+    border: .7rem solid;
+    border-color: #ffcb05 #ffcb05 rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    transform: rotate(45deg);
+  }
+
+  .progress-c2>span {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    color: #212121;
+    font-family: ShabnamBFD;
+  }
+
+  .progress-c3 {
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+    color: #fff;
+    font-size: 2rem;
+
+  }
+
+  .progress-c3:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7rem;
+    height: 7rem;
+    border: .7rem solid;
+    border-color: #ffcb05 #ffcb05 #ffcb05 rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    transform: rotate(45deg);
+  }
+
+  .progress-c3>span {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    color: #212121;
+    font-family: ShabnamBFD;
+  }
+
+  .btn-comment {
+    width: 90%;
+    color: #424242;
+    background-color: transparent;
+    margin: 1rem 3rem;
+    padding: 1rem;
+    border: 3px solid #424242;
+    outline: none;
+  }
+
+
+
+  .l-secondsection {
+    direction: rtl;
+    width: 100%;
+    margin: 0 auto;
+    background-image: url(../vectors/shapes.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
+
+  .l-thirdsection {
+    direction: rtl;
+    width: 100%;
+    margin: auto;
+  }
+
+  .comment-section {
+    width: 60%;
+    margin: 4rem auto;
+    padding: 4rem 0;
+
+  }
+
+  .comment-header {
+    color: #ffffff;
+    font-size: 1.5rem;
+
+  }
+
+  .main-comment {
+    background-color: #f5f5f5;
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+
+  }
+
+  .header-comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .comment-name {
+    flex: 1;
+    width: 50%;
+    height: 10rem;
+
+  }
+
+  .comment-shape {
+    width: 10rem;
+    height: 10rem;
+    display: block;
+    display: flex;
+    position: relative;
+  }
+
+  .shape-img {
+    width: 100%;
+    border-radius: 10rem;
+  }
+
+  .favorite {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    padding: 2rem;
+    border-radius: 50%;
+    background-color: #ffcb05;
+  }
+
+  .star-favorite {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 2.75rem;
+    height: 2.75rem;
+    fill: #212121;
+  }
+
+  .info-comment {
+    flex: 5;
+    margin-left: -3rem;
+
+    @include respond(tab-land) {
+      margin-right: 2rem;
+    }
+    @include respond(tab-port) {
+      margin-right: 1rem;
+    }
+    
+    @include respond(phone) {
+      margin-right: 1rem;
+    }
+  }
+
+  .primary-name {
+    display: block;
+    font-size: 1.7rem;
+    font-family: ShabnamB;
+
+    @include respond(phone) {
+      display: flex;
+      width: 20rem;
+    }
+
+
+  }
+
+  .secondary-name {
+    font-size: 1.3rem;
+    color: #757575;
+    font-family: ShabnamB;
+  }
+
+  .comment-stars {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .text-comment {
+    margin: 2rem;
+    font-size: 1.5rem;
+    font-family: ShabnamB;
+    text-align: justify;
+
+  }
+
+  .add-comment {
+    background-color: #f5f5f5;
+    padding: 3rem;
+    font-size: 1.5rem;
+    font-family: ShabnamB;
+    color: #9e9e9e;
+
+    @include respond(phone) {
+      font-size: 1.7rem;
+    }
+
+
+  }
+
+  #footer {
+    font-family: ShabnamB;
+
+  }
+
+  .l-footer {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    @include respond(phone) {
+      display: block;
+    }
+
+  }
+
+  .l-first-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+
+    @include respond(phone) {
+      float: left;
+      padding: 2rem 5rem;
+    }
+  }
+
+  .first-item {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: ShabnamB;
+    color: #9e9e9e;
+
+  }
+
+  .l-second-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+
+    @include respond(phone) {
+      float: right;
+      padding: 2rem 7rem;
+    }
+
+  }
+
+  .second-item {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: ShabnamB;
+    color: #9e9e9e;
+  }
+
+  .l-social-media {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(phone) {
+      clear: both;
+    }
+
+  }
+
+  .logo-footer {
+    margin-bottom: 2rem;
+
+    @include respond(phone) {
+      width: 15rem;
+    }
+  }
+
+  .social-logo {
+    margin-bottom: 2rem;
+
+  }
+
+  .aparat {
+    margin-right: .7rem;
+    cursor: pointer;
+
+    @include respond(phone) {
+      width: 5rem;
+      margin-right: 2rem;
+
+    }
+  }
+
+  .facebook {
+    margin-right: .7rem;
+    cursor: pointer;
+
+    @include respond(phone) {
+      width: 5rem;
+      margin-right: 2rem;
+
+    }
+
+  }
+
+  .instagram {
+    margin-right: .7rem;
+    cursor: pointer;
+
+    @include respond(phone) {
+      width: 5rem;
+      margin-right: 2rem;
+
+    }
+
+  }
+
+  .telegram {
+    margin-right: .7rem;
+    cursor: pointer;
+
+    @include respond(phone) {
+      width: 5rem;
+      margin-right: 2rem;
+
+    }
+
+  }
+
+  .footer-paragraph {
+    font-size: 1rem;
+    font-family: ShabnamB;
+    color: #9e9e9e;
+    margin-left: 2rem;
+  }

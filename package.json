@@ -1,0 +1,23 @@
+{
+  "name": "d.02.00-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "Compile:sass": "node-sass sass/style.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mostafaabdifar/D.02.00-project-info.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mostafaabdifar/D.02.00-project-info/issues"
+  },
+  "homepage": "https://github.com/Mostafaabdifar/D.02.00-project-info#readme"
+}
